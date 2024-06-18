@@ -1,5 +1,6 @@
 package com.example.productsapiexample.product.service;
 
+import com.example.productsapiexample.exception.type.EntityWasNotFoundException;
 import com.example.productsapiexample.product.domain.dto.CreateProductFormDTO;
 import com.example.productsapiexample.product.domain.dto.UpdateProductFormDTO;
 import com.example.productsapiexample.product.domain.entitie.Product;
@@ -30,7 +31,7 @@ public class ProductService {
     }
 
     public Product findProductById(Long id) {
-        return productRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("product", new Exception("id not found")));
+        return productRepository.findById(id).orElseThrow(() -> new EntityWasNotFoundException("product com id: " + id));
     }
 
     public List<CreateProductFormDTO> findAll() {
