@@ -6,7 +6,6 @@ import com.example.productsapiexample.product.domain.dto.UpdateProductFormDTO;
 import com.example.productsapiexample.product.domain.entitie.Product;
 import com.example.productsapiexample.product.mapper.ProductToProductFormDTOMapper;
 import com.example.productsapiexample.product.repository.ProductRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
