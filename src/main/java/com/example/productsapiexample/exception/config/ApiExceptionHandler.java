@@ -10,7 +10,7 @@ public class ApiExceptionHandler {
 
     @ExceptionHandler(EntityWasNotFoundException.class)
     public  ResponseEntity<Error> handleEntityNotFoundException(EntityWasNotFoundException e){
-        Error error = new Error("A entidade não foi encontrada", e.getClassName());
+        Error error = new Error("A entidade não foi encontrada", e.getMessage());
         return ResponseEntity.badRequest().body(error);
     }
 }
