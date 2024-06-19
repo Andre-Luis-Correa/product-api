@@ -25,14 +25,14 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CreateProductFormDTO> findProductById(@PathVariable Long id){
+    public ResponseEntity<CreateProductFormDTO> getProductById(@PathVariable Long id){
         Product product = productService.findProductById(id);
         CreateProductFormDTO createProductFormDTO = productService.convertToProductFormDTO(product);
         return ResponseEntity.ok(createProductFormDTO);
     }
 
     @GetMapping
-    ResponseEntity<List<CreateProductFormDTO>> findAllProducts(){
+    ResponseEntity<List<CreateProductFormDTO>> getAllProducts(){
         return ResponseEntity.ok(productService.findAll());
     }
 

@@ -30,7 +30,7 @@ public class ProductService {
     }
 
     public Product findProductById(Long id) {
-        return productRepository.findById(id).orElseThrow(() -> new EntityWasNotFoundException("product com id: " + id));
+        return productRepository.findById(id).orElseThrow(() -> new EntityWasNotFoundException("product", id));
     }
 
     public List<CreateProductFormDTO> findAll() {
